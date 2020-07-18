@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <head>
+        <link rel = "stylesheet" href="js30.css">
+        <title>document</title>
+    </head>
+    <body>
+        <h1>Human invented the clock<br>but God gave the time</h1>
+        <div class = clock>
+            <div class = clock-face>
+                <div class = "hand hour-hand"></div>
+                <div class="hand min-hand"></div>
+                <div class = "hand second-hand"></div>
+            </div>
+        </div>
+        <script>
+            const secondhand = document.querySelector(".second-hand");
+            const minhand = document.querySelector(".min-hand");
+            const hourhand = document.querySelector(".hour-hand");
+            function setDate(){
+                const now = new Date();
+                var seconds =0;
+                seconds = now.getSeconds();
+                const second_deg = (((seconds/60)*360) +90);
+                secondhand.style.transform = `rotate(${second_deg}deg)`
+                const mins = now.getMinutes();
+                const min_deg = (((mins/60)*360) +90);
+                minhand.style.transform = (`rotate(${min_deg}deg`);
+                const hours = now.getHours();
+                const hour_deg = (((hours/12)*360) +90);
+                hourhand.style.transform = (`rotate(${hour_deg}deg`);
+            }
+            setInterval(setDate,1000)
+
+        </script>   
+</body>
+</html>

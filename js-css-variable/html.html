@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name = "author" content = "Yamin">
+    <meta name="keywords" content="HTML,CSS,javascript" >
+    <link rel ="stylesheet" href = "css03.css">
+</head>
+<body>
+    <h2>Upadate Your Life with <span class="head1">LOVE</span></h2>
+    <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input type = "range" name ="spacing" min="10" max="200" value="10" data-sizing="px">
+
+        <label for = "Blur">Blur :</label>
+        <input type = "range" name= "blur" min="0" max="25" value="10" data-sizing="px">
+        
+        <label for = "base">Base Color:</label>
+        <input type = "color" name= "base" value="#ffc600" >
+    </div>
+
+    <div class="img">
+    <img src="D:\Pictures\wallpaper\lamborgini.jpg" alt="There's a pic of a lamborgini car">    
+    </div>
+    </div>
+
+    <script>
+        const input = document.querySelectorAll(".controls input");
+        function changeit(){
+            //console.log(this.value);
+            //console.log(this.name);
+            const suffix = this.dataset.sizing || '' ;
+            // ...|| ' ' this is done because the element which has no data-sizing (color) suffix will be null
+            //color don't need px 
+            document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix);
+        }
+        for(const m of input){
+            m.addEventListener("change",changeit);
+            m.addEventListener("mousemove",changeit);
+        }
+    </script>
+</body>

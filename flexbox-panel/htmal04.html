@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flex panel </title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="allpanel">
+    <div class="panel panel1">
+        <p>lets</p>
+        <p>Do</p>
+        <p>It</p>
+    </div>
+    
+    <div class="panel panel2">
+        <p>lets</p>
+        <p>Do</p>
+        <p>It</p>
+    </div>
+    
+    <div class="panel panel3">
+        <p>lets</p>
+        <p>Do</p>
+        <p>It</p>
+    </div>
+    <div class="panel panel4">
+        <p>lets</p>
+        <p>Do</p>
+        <p>It</p>
+    </div>
+    <div class="panel panel5">
+        <p>lets</p>
+        <p>Do</p>
+        <p>It</p>
+    </div>
+</div>
+<script>
+    const panelselect = document.querySelectorAll(".panel");
+    const panel1=document.querySelector('.panel1');
+
+
+    function openup(){
+        console.log("hello");
+        this.classList.toggle("open");
+        } 
+    function textpop(e){
+        this.classList.add("open-active");
+    }
+    panelselect.forEach(element => {
+        element.addEventListener('click',openup);
+        element.addEventListener("transitionend",textpop)});
+    
+</script>
+</body>
+</html>

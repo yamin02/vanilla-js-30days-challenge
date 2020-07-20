@@ -1,0 +1,71 @@
+    body{
+        background:blue;
+        margin: 0em;
+    }
+    .allpanel{
+        overflow:hidden;
+        min-height: 100vh;
+        display: flex;
+        background: black;
+    }
+    .panel{
+        background: black;
+        text-align: center;
+        color: orangered;
+        flex:1;
+        box-shadow: inset 0 0 4px 10px rgba(195, 54, 54, 0.1);
+        align-items: center; 
+        background-size: cover; 
+        background-position: center;  
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        transition: 
+        font-size 0.7s ease-in, 
+        flex 0.7s ease-in,
+        backgraound 0.2s; 
+    }
+    .open{
+        flex : 5;
+        font-size: 20px;}
+    .panel3{
+        background-image: url("D:/Pictures/PICS/imgq.png");
+    }
+    .panel2{
+        background-image: url("D:/Pictures/GIFT/concepts.png");
+    }
+    .panel1{
+        background-image: url("D:/Pictures/GIFT/three.png");
+    }
+    .panel4{
+        background-image: url("D:/Pictures/GIFT/one.png");
+    }
+    .panel5{
+        background-image: url("D:/Pictures/GIFT/yamin.jpeg");
+    }
+    /* flex tems */
+    .panel > * {
+        margin: 0;
+        /* border : 5px solid red; */
+        width : 100%;
+        transition:transform 0.5s;
+        flex: 1 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .panel >*:first-child{
+        transform: translateY(-100%);}
+    .panel.open-active >*:first-child {
+        transform: translateY(0);}
+    .panel >*:last-child{
+        transform: translateY(100%);}
+    .panel.open-active >*:last-child{
+        transform: translateY(0);}
+    .panel p{
+        font-size: 30px;
+        font-family: monospace;
+    }
+    .panel :nth-child(2){
+        font-size: 70px;
+    }

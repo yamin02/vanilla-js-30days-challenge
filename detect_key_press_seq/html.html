@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Key press sequence</title>
+    </head>
+    <body>
+        <h1>Press the "yamin" in the keyboard as see the magic </h1>
+        <div></div>
+        <style>
+            h1{
+                padding: 10%;
+                text-align: center;
+                color: limegreen;
+                text-shadow: 1px 1px 0px 3px blue;
+                font-family: monospace;
+            }
+            .div{
+                width: inherit;
+            }
+            .magic{
+                background-color: aqua;
+                border: 1px solid black;
+                text-align: center;
+                font-size: 30px;
+                width: fit-content;
+                margin-left: 40%;
+            }
+            .magic:hover{
+                background-image: url("D:/Pictures/GIFT/three.png");
+                background-repeat: repeat-x;
+                background-size: contain;
+                width:100%;
+                height: 300px;
+                overflow: auto;
+                margin: 0;
+            }
+            
+        </style>
+    </body>
+    <script>
+        const press = [];
+        const code = "yamin"; 
+        const div = document.querySelector("div");
+        function show(e){
+            press.push(e.key);
+            press.splice(-code.length -1 , press.length -code.length);
+            console.log(press.join(''));
+            if (press.join('') === (code)){
+                div.classList.add('magic');
+                div.textContent = "ebar hobe moja";
+            }
+        }
+        window.addEventListener('keyup',show);
+    </script>
+</html>

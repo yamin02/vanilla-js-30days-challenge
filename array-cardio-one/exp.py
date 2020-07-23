@@ -1,0 +1,4 @@
+arr = ['buttinsky', 'forbar', 'victimise', 'foredoes', 'votarist', 'uncategorised', 'grub-time', 'astringence', 'pyrethrin', 'birdstrikes', 'wonderwork', 'telinga', 'annunciating', 'pronuclear', 'roadbook', 'clankingly', 'ox-antelope', 'auxiliary', 'hit-by-pitch', 'polianthes', 'srbija', 'unblemishable', 'cartridge-box', 'uous', 'noncasual', 'Mass.', 'falcon-eyed', 'sister-wives', 'Russians', 'carrefour', 'lexicologist', 'ingrateful', 'crackedness', 'colonnades', 'podophyllotoxin', 'castration', 'fishsellers', 'genuineness', 'appertain', 'fetishising', 'construes', 'reisolating', 'incrustations', 'eagled', 'averment', 'nonenrolled']
+for i in range(len(arr)-1):
+    arr[i] = arr[i] + ',' + arr[i+1]
+print(arr)

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Html draw Anything</title>
+    <style> 
+    html, body {
+        margin: 0px;
+        background-color: black;
+    }    
+    button{
+        width: 100px;
+        height: 100px;
+    }
+    </style>
+    </head>
+<body>
+<button >reset</button>
+<canvas id = "draw" width= "800" heigth = "800">
+</canvas>
+<script>
+const button = document.querySelector("button");
+// the reset button 
+button.addEventListener("click", () => {
+ctx.fillStyle = 'black' ;
+ctx.clearRect(0,0,canvas.width,canvas.height) });
+//the eraser button can be made by making it draw black color
+
+
+const canvas = document.getElementById("draw");
+// context defines all the properties of canvas
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+//ctx.fillStyle = 'black';
+//ctx.fillRect(0,0,canvas.width,canvas.height)  //fills the Rect region with fillStyle 
+ctx.strokeStyle = 'orange';
+ctx.lineJoin = 'miter';  //can create round, bevel , miter(means sharp) corner
+// ctx.lineCap = 'butt';  //line cap define the end region being round , butt or square
+ctx.lineWidth = 30 ; 
+ctx.globalCompositeOperation = 'multiply';  //blends with each other. a feature of photoshop 
+
+let isDrawing =  false;
+let lastX= 0;
+let lastY = 0;
+let hue = 0;   // zero is red , green is 120
+
+function draw(e){
+    if(!isDrawing) return;
+    //console.log(e);
+    ctx.strokeStyle = `hsl(${hue},100% , 50%)`  //e.g. green is hsl(120, 100%(saaturation) , 50% (light))  
+    // ctx.lineWidth = hue;   //the line width increase
+    ctx.beginPath();
+    // always starts at lastx , lasty 
+    ctx.moveTo(lastX,lastY);
+    //always ends line at where my mouse points
+    ctx.lineTo(e.offsetX , e.offsetY);
+    ctx.stroke();
+    [ lastX , lastY ] = [e.offsetX, e.offsetY];
+    hue++;
+    if(hue > 360){
+        hue = 0;
+    }
+}
+
+// drawing triggered only when mouse clicked and dragged
+canvas.addEventListener("mousemove",draw);
+canvas.addEventListener('mousedown', (e) => {
+isDrawing = true ;
+[ lastX , lastY ] = [e.offsetX, e.offsetY]; });
+canvas.addEventListener("mouseup", () => isDrawing = false);
+canvas.addEventListener("mouseout",() => isDrawing = false);
+
+</script>
+
+</body>
+</html>

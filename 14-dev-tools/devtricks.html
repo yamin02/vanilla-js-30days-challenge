@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head><title>14 dev tricks</title></head>
+    <body>
+        <p>Hi its me</p>
+        <script>
+            console.log('its me with %s them','😰');
+
+            console.log("%c i am cvoo", "font-size : 50px ; background: red ; color : green ; border : 3px solid black");
+
+            console.warn('Oh noo');
+            console.error("this is erros");
+            console.info('i eat meat everyday');
+
+            const p = document.querySelector("p");
+            console.assert(p.classList.contains('class1'),'Test for something if false throws error')
+
+            console.clear();
+            console.dir(p); //shows all the properties of p
+            console.log(p);
+
+            const me = [{name : 'yamin', age: 45 },{name : 'gundo' , age : 60}];
+            console.table(me);
+            for (const m of me ){
+                console.groupCollapsed(`${m.name}`);
+                console.log("okay its fine");
+                console.log(`${m.name} is named by its age ${m.age}`);
+                console.groupEnd(`${m.name}`); }
+
+                console.count('console');
+                console.count('console');
+
+                console.time('Time required to fetch data :');
+                fetch('https://api.github.com/users/yamin02')
+                .then( bata => bata.json())
+                .then(data => {
+                    console.timeEnd('Time required to fetch data :');
+                    console.log(data);
+                });
+                console.clear();
+
+                let promise = fetch("https://avatars0.githubusercontent.com/u/61344650?v=4");
+                console.log(promise);
+            
+        </script>
+    </body>
+</html>

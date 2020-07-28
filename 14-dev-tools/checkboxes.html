@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Checkbox</title></head>
+    <style>
+        .item{
+            display: block;
+            background-color: aqua;
+            padding : 20px;
+            border: 1px solid black;
+            
+        }
+        #div1{
+            margin-top: 30%;
+            margin-left: 50%;
+            border:  2px dotted whitesmoke;
+            box-shadow: 3px 3px 20px 10px blue;
+            background-color: aqua;
+            width: fit-content;
+    
+        }
+        input{
+            margin-right: 20px;
+        }
+    </style>
+    <body><div id = "div1">
+        <div class = "item">
+            <input type = "checkbox">
+            <label> it's okay to be smart</label>
+        </div>
+        <div class = "item">
+            <input type = "checkbox">
+            <label>its be smart</label>
+        </div>
+        <div class = "item">
+            <input type = "checkbox">
+            <label>its ay to be smart</label>
+        </div>
+        <div class = "item">
+            <input type = "checkbox">
+            <label>its ok is the best to be smart</label>
+        </div> </div>
+        <script>
+            const input = Array.from(document.querySelectorAll('input[type = "checkbox"]'));
+            //input[0].checked = true;
+            console.log(input);
+            let lastchecked ;
+            shiftpress = (e) =>{
+                console.log(`${e.keyCode}`);
+            }
+            function handlecheck (e) { 
+                let inbetween = false;
+                //if shift key presed and the checkbox checked true
+                if (e.shiftKey && this.checked) {
+                    for (const m of input){
+                        if(m === this || m === lastchecked){
+                            console.log('ki bhaiya');
+                            inbetween = !inbetween ;
+                            }
+                         if(inbetween){
+                            m.checked = true;   //this cant be replaced with m.checked = inbetween //guess why ?
+                         }   
+                    }
+                }
+                lastchecked = this;
+            }
+
+            for (const m of input) {
+                m.addEventListener('click',handlecheck)
+            }
+        </script>
+    </body>
+</html>

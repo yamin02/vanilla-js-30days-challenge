@@ -1,0 +1,43 @@
+body {
+    background-color: blueviolet;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.player {
+    margin: 30%;
+    margin-top: 20%;
+} 
+button {
+    background: rgb(0, 10, 10);
+    width : 60px;
+    height: 5%;
+    border-radius: 15px;
+    color: rgb(241, 241, 23);
+    outline: 0;
+    cursor: pointer;
+    /* transform: translateY(-50px); */
+    position: relative;
+    align-items: center;
+} 
+.toggle{
+    font-size: 20px;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    background: rgb(3, 3, 1);
+}
+.player_controls{
+    /* display: flex; */
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    /* transform: translateY(100%) translateY(-5px); */
+    /* transition: all .3s; */
+    /* flex-wrap: wrap; */
+    background: rgba(234, 238, 9, 0.993);
+    color: yellow;
+  } 
+  .progress_filled{
+      color: chartreuse;
+  }

@@ -1,0 +1,28 @@
+<!-- Project not complete. the volume button , playrate and play - pause button, and forward- backward button works . Progress bar requires flecbox knowledge so not done yet  -->
+
+<!doctype = html>
+<html>
+    <head>
+        <title>HTML Video Player</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body>
+        <div class = "player">
+            <video class = "player_video viewer" src ="D:\Videos\myVid\Doraemon theme song Bangla.mp4"></video>
+            <div class = "player_controls">
+            <div class = "progress_filled"></div>    
+            </div>
+            <button class = "player_button toggle" title="toggle play"> play</button>
+            <label>volume</label>
+            <input type = "range" name = "volume"  class = "player_slider" min = 0 max = 1 step = 0.05 value = 1>
+            <br>
+            <label>Play Rate</label>:
+            <input type = range name = playbackRate class = player_slider min = 0.5 max = 2 step = 0.1 value = 1 > 
+         
+            <button data-skip = -10 class =skip> <<10s </button>
+            <button data-skip = 25 class =skip> 25s>> </button>
+        </div>
+        
+    <script src = "work.js"></script>
+    </body>
+</html>

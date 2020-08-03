@@ -3,12 +3,13 @@ html{
 }
 
 *{
+  
     box-sizing: inherit;
 }
 
 body{
     font-family: monospace;
-    height: 100vh;
+    height: fit-content;
     margin: 0;
     background-image: linear-gradient(to bottom left,rgb(79, 236, 228),rgb(248, 142, 251), rgb(183, 140, 240));
 }
@@ -16,6 +17,7 @@ body{
 a{
     color: white;
     font-weight: 100;
+    font-family: monospace;
     letter-spacing: 2px;
     padding: 20px;
     text-align: center;
@@ -26,6 +28,7 @@ a{
     transition: all 0.5s;
     text-decoration: none;
 }
+
 a:hover{
     background: rgb(0, 0, 0,0.3);
 }
@@ -33,15 +36,18 @@ a:hover{
 .wrapper{
     max-width: 1000px;
     margin: 0 auto;
-    padding: 50px;
+    padding: 0px 30px 10px 30px;
+    /* border: 5px solid black; */
+
 }
 
 .flex-nav ul{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     list-style: none;
     margin : 0; 
     padding: 0 ;
     display: flex;
+    /* flex given in the ul  */
     flex-wrap: wrap;
 }
 .flex-nav li {
@@ -49,18 +55,67 @@ a:hover{
 }
 .flex-nav .social {
     flex : 1 1 5%;
+    /* for this social icon are in one line */
+}
+.toggleNav{
+    display: none;
 }
 
-@media all and (max-width : 750px){
 
-    .flex-nav ul{
-        flex-wrap: wrap;
-    }
+section, footer  {
+  text-align: center;
+  /* border: 5px solid black; */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0,0.1);
+  position: relative;
+  margin-top: 30px;
+  color: aliceblue;
+  font-size: 20px;
+}
+.image img{
+    width: 100%;
+}
+
+.signup input{
+    width: 250px;
+    height: 30px;
+}
+.signup input:nth-child(3){
+    width: 100px;
+    background-color: black;
+    color: aliceblue;
+    padding: 5px;
+}
+
+@media all and (max-width: 500px){
     .flex-nav li{
-        flex : 1 1 33.333333%;
+        flex-basis: 100%;
     }
-    .flex-nav .social{
-        flex : 1 1 25%;
+    /* flex container */
+    .wrapper {
+        display: flex;
+        flex-direction: column;
     }
-
+    /* flex item */
+    .wrapper > *{
+        order: 69;
+        /* just Giving a large random value  */
+    }
+    .flex-nav {
+        order: 1;
+    }
+    .toggleNav {
+        display: block;
+    }
+    .flex-nav ul{
+        display: none;
+        transition: display 2.5s;
+    }
+    .wrapper h1 {
+        order: 2;
+    }
+    .signup{
+        order: 3;
+    }
 }

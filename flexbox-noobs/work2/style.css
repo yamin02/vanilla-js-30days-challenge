@@ -1,9 +1,9 @@
 html{
     box-sizing: border-box;
+    /* border box includes padding and border in total width and height */
 }
 
 *{
-  
     box-sizing: inherit;
 }
 

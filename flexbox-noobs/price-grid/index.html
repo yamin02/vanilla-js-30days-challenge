@@ -1,0 +1,50 @@
+<html>
+    <title>Flexbox Price grid</title>
+    <head>
+        <link rel = "stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="grid one">
+                <h1>calculator baba</h1>
+                <p>Hey its the b the y its thn thy ihb in th world</p>
+                <p>Hey its the best in th world</p>
+                <p>Hey its </p>
+                <p>the best in th world</p>
+                <p>Hey the best in th world</p>
+                <p class="cash">$90</p>
+                <button id = Button1>KILL IT NOW</button>
+            </div>
+            <div class="grid two">
+                <h1>calculator baba</h1>
+                <p>Hes st isgdf world</p>
+                <p>Hey its the best in th world</p>
+                <p>Hey its </p>
+                <p>the best in th world</p>
+                <p>Hey the best in th world</p>
+                <p class="cash">$90</p>
+                <button id = Button1>START NOW</button>
+            </div>
+            <div class="grid three">
+                <h1>calculator baba</h1>
+                <p>Hey its the b the best in th worldest in th world</p>
+                <p>Hey its the best in th world</p>
+                <p>Hey its </p>
+                <p>the best in th world</p>
+                <p>Hey the best in th world</p>
+                <p class="cash">$90</p>
+                <button id = Button1>KILL the HELL</button>
+            </div>
+        </div>
+        <script>
+            function toggle(){
+                this.classList.toggle('flex-add')
+            }
+            const grid = Array.from(document.querySelectorAll('.grid'));
+            for (const m of grid){
+                m.addEventListener('click',toggle)}
+        </script>
+    </body>
+</html>

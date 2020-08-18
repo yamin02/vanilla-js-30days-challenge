@@ -1,0 +1,53 @@
+html{
+    box-sizing: border-box;
+}
+*{
+    box-sizing: inherit;
+}
+body{
+    height : 100vh;
+    background-image: linear-gradient(to bottom left ,pink,cyan,rgb(163, 63, 163));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    border : 3px solid black
+
+}
+.docs{
+    width: 50%;
+    background: rgb(60, 0, 255);
+    color: rgb(218, 237, 246);
+    font-size: 25px;
+    font-family: monospace;
+    border: 3px solid black;
+    margin-bottom: 50px;
+    overflow: auto;
+    /* scrollbar-width: 10px; */
+    /* scrollbar-arrow-color: aqua; */
+}
+.docs::-webkit-scrollbar {
+    width: 10px;
+  }
+.docs::-webkit-scrollbar-thumb {
+    background-color: rgb(7, 194, 251);
+    outline: 1px solid rgb(18, 18, 19);
+}
+#docs{
+    margin: 10px;
+}
+img{
+    float:right;
+    width : 50%;
+    transform: translateX(-40%);
+    opacity: 0;
+}
+#right{
+    float:left
+}
+.active{
+    transform: translateX(0);
+    transition: all 0.5s;
+    opacity:1;
+}
